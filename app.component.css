@@ -1,0 +1,17 @@
+p {
+    font-family: Lato;
+  }
+
+  .register-form{background-color:rgb(255, 0, 128);}
+  #root {
+    padding: 30px;
+   
+  }
+  
+  .register-form {
+    max-width: 350px;
+    margin: auto;
+  }
+h1{
+ text-emphasis-color:blue;
+}

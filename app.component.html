@@ -1,0 +1,134 @@
+<body style="background-color:yellowgreen">
+  <h1 style="text-align:center;">Tour package System </h1>
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Enter Full Name:</label>
+      <input type="text" formControlName="fullname" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+      />
+      <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+        <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+      </div>
+    </div>
+
+<br>
+
+    <div class="form-group">
+      <label>Enter Source Address:</label>
+      <input type="text" formControlName="source" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['source'].errors }"
+      />
+      <div *ngIf="submitted && f['source'].errors" class="invalid-feedback">
+        <div *ngIf="f['source'].errors['required']">Source place is required</div>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label>Enter Destination Address:</label>
+      <input type="text" formControlName="username" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+      />
+      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+        <div *ngIf="f['username'].errors['required']">Destination place  is required</div>
+        <div *ngIf="f['username'].errors['minlength']">
+          Destination must be at least 3 characters
+        </div>
+        <div *ngIf="f['username'].errors['maxlength']">
+          Destination must not exceed 30 characters
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Number of days:</label>
+      <input type="text" formControlName="nood" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['nood'].errors }"
+      />
+      <div *ngIf="submitted && f['nood'].errors" class="invalid-feedback">
+        <div *ngIf="f['nood'].errors['required']">no of days place is required</div>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label>Enter your Email:</label>
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+      />
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Enter Password:</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+      />
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required</div>
+        <div *ngIf="f['password'].errors['minlength']">
+          Password must be at least 6 characters
+        </div>
+        <div *ngIf="f['password'].errors['maxlength']">
+          Password must not exceed 40 characters
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Enter Package Id:</label>
+      <input
+        type="password"
+        formControlName="package"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['package'].errors }"
+      />
+      <div *ngIf="submitted && f['package'].errors" class="invalid-feedback">
+        <div *ngIf="f['package'].errors['required']">Package is required</div>
+        <div *ngIf="f['package'].errors['minlength']">
+          Package must be 7 characters
+        </div>
+        <div *ngIf="f['package'].errors['maxlength']">
+          Package must be 7 characters
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        class="form-check-input"
+        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
+      />
+      <label for="acceptTerms" class="form-check-label"
+        >I have read and agree to the Terms</label
+      >
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        Accept Terms is required
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button
+        type="button"
+        (click)="onReset()"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
+</body>
